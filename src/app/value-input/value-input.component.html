@@ -1,0 +1,35 @@
+<div>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="mb-3">
+      <label for="number" class="form-label">Entrez un nombre :</label>
+      <input
+        type="number"
+        class="form-control"
+        id="number"
+        name="number"
+        [(ngModel)]="number"
+        required
+        min="0"
+        max="100"
+        placeholder="Entrez un nombre entre 0 et 100"
+        #numberInput="ngModel"
+      />
+      <div *ngIf="numberInput.errors && (form.submitted || numberInput.dirty)" class="text-danger mt-2">
+        <div *ngIf="numberInput.errors['required']">
+          Le nombre est requis.
+        </div>
+        <div *ngIf="numberInput.errors['min']">
+          Le nombre doit être supérieur ou égal à 0.
+        </div>
+        <div *ngIf="numberInput.errors['max']">
+          Le nombre doit être inférieur ou égal à 100.
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Convertir</button>
+  </form>
+
+  <div *ngIf="result" class="mt-3">
+    <p><strong>Résultat :</strong> {{ result }}</p>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="container mt-5">
+  <h2>Challenge Kata - Foo Bar Quix</h2>
+
+  <div class="kata-description">
+    <h4>Enoncé Backend</h4>
+    <ul>
+      <li>Si le nombre est divisible par 3 ou s'il contient 3, la chaîne de caractères doit contenir "FOO"</li>
+      <li>Si le nombre est divisible par 5 ou s'il contient 5, la chaîne de caractères doit contenir "BAR"</li>
+      <li>Si le nombre contient 7, la chaîne de caractères doit contenir "QUIX"</li>
+      <li>La règle "divisible par" est plus prioritaire que la règle "contient"</li>
+      <li>Le contenu est analysé de gauche à droite</li>
+      <li>Si aucune des règles n'est vérifiée, retourner le nombre en entrée sous forme de chaîne de caractères</li>
+    </ul>
+
+    <h4>Exemples :</h4>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Input</th>
+        <th>Output</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr><td>1</td><td>"1"</td></tr>
+      <tr><td>3</td><td>"FOOFOO"</td></tr>
+      <tr><td>5</td><td>"BARBAR"</td></tr>
+      <tr><td>7</td><td>"QUIX"</td></tr>
+      <tr><td>9</td><td>"FOO"</td></tr>
+      <tr><td>51</td><td>"FOOBAR"</td></tr>
+      <tr><td>53</td><td>"BARFOO"</td></tr>
+      <tr><td>33</td><td>"FOOFOOFOO"</td></tr>
+      <tr><td>15</td><td>"FOOBARBAR"</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#testApiModal">
+    Commencer la conversion
+  </button>
+</div>
+
+<div class="modal fade" id="testApiModal" tabindex="-1" aria-labelledby="testApiModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-value-input></app-value-input>
+      </div>
+    </div>
+  </div>
+</div>
+
